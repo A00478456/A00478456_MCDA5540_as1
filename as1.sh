@@ -9,7 +9,7 @@ echo
 #### INSERT HERE the command to import from authors.json into MONGO collection author
 col_name=author
 mongouri="mongodb://$user:$pass@localhost/$db"
-mongoimport "$mongouri" -c $col_name --file authors.json
+mongoimport "$mongouri" -c $col_name --file /home/course/u00/sk_public/authors.json
 echo
 echo "-> Imported authors.json into Mongodb collection \"author\""
 echo
