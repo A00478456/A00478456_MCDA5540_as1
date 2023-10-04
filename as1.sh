@@ -8,8 +8,7 @@ pass="$3"
 echo
 #### INSERT HERE the command to import from authors.json into MONGO collection author
 col_name=author
-mongouri="mongodb://$user:$pass@localhost/$db" 
-mongo "$mongouri" --eval "db.$col_name.drop()"
+mongouri="mongodb://$user:$pass@localhost/$db"
 mongoimport "$mongouri" -c $col_name --file authors.json
 echo
 echo "-> Imported authors.json into Mongodb collection \"author\""
@@ -22,7 +21,6 @@ mongo "$mongouri" --eval "db.$col_name.drop()"
 echo
 echo "-> Exported collection \"author\" into authors.csv and deleted the collection"
 #
-mysql -u "$user" --password="$pass" "$db" -e "drop table if exists author;"
 mysql -u "$user" --password="$pass" "$db" -e "source create_author_table.sql;"
 echo
 echo "-> Created table \"author\" in MySQL database"
